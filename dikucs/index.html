@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="迪酷CS1.6 - 经典CS1.6专属地图资源站。提供CS1.6迪酷系列地图下载、玩家社区讨论、战绩查询及经典游戏攻略，重温90年代末FPS网游巅峰体验。">
+    <meta name="keywords" content="迪酷cs1.6, CS1.6地图, 迪酷系列, 反恐精英1.6, 经典CS1.6, 迪酷CS1.6下载">
+    <title>迪酷cs1.6 - 经典CS1.6专属地图与社区</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #f39c12;
+            --secondary-color: #2c3e50;
+            --bg-color: #1a1a1a;
+            --card-bg: #252525;
+            --text-main: #ecf0f1;
+            --text-muted: #bdc3c7;
+            --border-radius: 8px;
+            --spacing-unit: 1rem;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.6rem 1.2rem;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(44, 62, 80, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: #fff;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url('https://picsum.photos/seed/cstrike/1920/1080') no-repeat center center/cover;
+            margin-bottom: 3rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Stats Section */
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        /* Main Content Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #333;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            color: #fff;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 1rem;
+        }
+
+        /* Map Cards */
+        .map-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .map-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--primary-color);
+        }
+
+        .map-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        .map-info {
+            padding: 1rem;
+        }
+
+        .map-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .map-meta {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .map-tags span {
+            background: rgba(243, 156, 18, 0.1);
+            color: var(--primary-color);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-right: 0.3rem;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+            border: 1px solid #333;
+        }
+
+        .sidebar-widget h3 {
+            margin-bottom: 1rem;
+            color: #fff;
+            border-bottom: 1px solid #444;
+            padding-bottom: 0.5rem;
+        }
+
+        .download-list li {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 0.8rem;
+        }
+
+        .download-list li:last-child {
+            border-bottom: none;
+        }
+
+        .download-list a {
+            display: block;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .download-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .download-size {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            display: block;
+            margin-top: 0.2rem;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: #222;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        .guide-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .guide-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        .guide-text p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+
+        .guide-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .guide-list li::before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-size: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111;
+            padding: 3rem 0;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .copyright {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .guide-content {
+                grid-template-columns: 1fr;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: var(--secondary-color);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1rem;
+            }
+
+            nav ul.show {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <span>◆</span> 迪酷CS1.6
+            </a>
+            <button class="mobile-menu-btn" aria-label="菜单">☰</button>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#maps">地图下载</a></li>
+                    <li><a href="#guides">攻略指南</a></li>
+                    <li><a href="#community">玩家社区</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container hero-content">
+                <h1>重返经典：迪酷CS1.6专属地图站</h1>
+                <p>汇集全网最全的迪酷系列CS1.6地图资源，体验原汁原味的90年代FPS竞技乐趣。安全下载，极速解析，重温爆破与团队竞技的巅峰时刻。</p>
+                <div style="display: flex; gap: 1rem; justify-content: center;">
+                    <a href="#maps" class="btn btn-primary">浏览地图库</a>
+                    <a href="#guides" class="btn btn-outline">新手入门</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="container">
+            <section class="stats-bar">
+                <div class="stat-card">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">精选迪酷地图</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">安全无毒下载</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">服务器在线状态</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">10W+</span>
+                    <span class="stat-label">注册玩家社区</span>
+                </div>
+            </section>
+        </div>
+
+        <!-- Main Content Area -->
+        <div class="container main-grid">
+            <!-- Left Column: Map List -->
+            <section id="maps">
+                <div class="section-header">
+                    <h2 class="section-title">热门迪酷地图推荐</h2>
+                    <a href="#" style="color: var(--primary-color); font-size: 0.9rem;">查看全部 &raquo;</a>
+                </div>
+
+                <div class="map-grid">
+                    <!-- Map Card 1 -->
+                    <article class="map-card">
+                        <img src="https://picsum.photos/seed/diku1/400/300" alt="迪酷-沙漠风暴重制版" class="map-img">
+                        <div class="map-info">
+                            <h3 class="map-title">迪酷-沙漠风暴重制版</h3>
+                            <div class="map-meta">
+                                <span>类型: 爆破模式</span>
+                                <span>大小: 65 MB</span>
+                            </div>
+                            <div class="map-tags">
+                                <span>经典重制</span>
+                                <span>高画质</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">立即下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Map Card 2 -->
+                    <article class="map-card">
+                        <img src="https://picsum.photos/seed/diku2/400/300" alt="迪酷-火车站" class="map-img">
+                        <div class="map-info">
+                            <h3 class="map-title">迪酷-火车站 (Diku Station)</h3>
+                            <div class="map-meta">
+                                <span>类型: 团队竞技</span>
+                                <span>大小: 58 MB</span>
+                            </div>
+                            <div class="map-tags">
+                                <span>快节奏</span>
+                                <span>街机风</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">立即下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Map Card 3 -->
+                    <article class="map-card">
+                        <img src="https://picsum.photos/seed/diku3/400/300" alt="迪酷-小镇激战" class="map-img">
+                        <div class="map-info">
+                            <h3 class="map-title">迪酷-小镇激战</h3>
+                            <div class="map-meta">
+                                <span>类型: 混战模式</span>
+                                <span>大小: 72 MB</span>
+                            </div>
+                            <div class="map-tags">
+                                <span>竞技</span>
+                                <span>平衡性佳</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">立即下载</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Map Card 4 -->
+                    <article class="map-card">
+                        <img src="https://picsum.photos/seed/diku4/400/300" alt="迪酷-古堡风云" class="map-img">
+                        <div class="map-info">
+                            <h3 class="map-title">迪酷-古堡风云</h3>
+                            <div class="map-meta">
+                                <span>类型: 爆破模式</span>
+                                <span>大小: 80 MB</span>
+                            </div>
+                            <div class="map-tags">
+                                <span>策略</span>
+                                <span>迷宫</span>
+                            </div>
+                            <div style="margin-top: 1rem;">
+                                <a href="#" class="btn btn-outline" style="width: 100%; font-size: 0.9rem;">立即下载</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Right Column: Sidebar -->
+            <aside>
+                <!-- Download Widget -->
+                <div class="sidebar-widget">
+                    <h3>最新更新</h3>
+                    <ul class="download-list">
+                        <li>
+                            <a href="#">迪酷-机场突袭 v2.0</a>
+                            <span class="download-size">v2.0 | 128 MB</span>
+                        </li>
+                        <li>
+                            <a href="#">迪酷-生化危机Remastered</a>
+                            <span class="download-size">Remastered | 90 MB</span>
+                        </li>
+                        <li>
+                            <a href="#">迪酷-核弹危机</a>
+                            <span class="download-size">v1.5 | 110 MB</span>
+                        </li>
+                        <li>
+                            <a href="#">迪酷-雪地行动</a>
+                            <span class="download-size">v1.2 | 85 MB</span>
+                        </li>
+                        <li>
+                            <a href="#">迪酷-废弃工厂</a>
+                            <span class="download-size">v1.0 | 70 MB</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Ad Placeholder -->
+                <div class="sidebar-widget" style="background: #333; display: flex; align-items: center; justify-content: center; min-height: 250px; color: #666;">
+                    [广告位]
+                </div>
+
+                <!-- FAQ Widget -->
+                <div class="sidebar-widget">
+                    <h3>常见问题 (FAQ)</h3>
+                    <div style="font-size: 0.9rem; color: var(--text-muted);">
+                        <p style="margin-bottom: 0.5rem;"><strong>Q: CS1.6怎么运行这些地图？</strong></p>
+                        <p style="margin-bottom: 1rem; color: #aaa;">将解压后的地图文件夹复制到Steam/HL根目录下的 cstrike/maps 文件夹中即可。</p>
+                        
+                        <p style="margin-bottom: 0.5rem;"><strong>Q: 迪酷地图支持哪些版本？</strong></p>
+                        <p style="color: #aaa;">本站提供的地图主要针对原版CS 1.6及HL引擎版本，部分高清版可能需要安装额外材质包。</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Guide Section -->
+        <section id="guides" class="guide-section">
+            <div class="container guide-content">
+                <div class="guide-text">
+                    <h2>新手玩家必读：如何开始你的迪酷之旅</h2>
+                    <p>CS1.6 不仅仅是一款射击游戏，它承载了无数玩家的青春回忆。迪酷系列地图以其独特的创意和经典的玩法，成为了众多老玩家回归的首选。</p>
+                    <ul class="guide-list">
+                        <li><strong>下载安装：</strong>选择适合你电脑配置的地图包，解压后放入游戏目录。</li>
+                        <li><strong>启动游戏：</strong>进入游戏大厅，右键地图选择“观看”或“开始游戏”。</li>
+                        <li><strong>网络对战：</strong>在控制台输入 connect IP 地址连接服务器，或使用内置的局域网搜索功能。</li>
+                        <li><strong>装备搭配：</strong>了解不同枪械的弹道和射程，是取得胜利的关键。</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary">阅读完整攻略</a>
+                </div>
+                <div style="background: url('https://picsum.photos/seed/gaming/600/400') center/cover; border-radius: var(--border-radius); min-height: 300px; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.5); border-radius: var(--border-radius);"></div>
+                    <span style="position: relative; color: #fff; font-size: 1.5rem; font-weight: bold;">社区精彩瞬间</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">隐私政策</a>
+                <a href="#">用户协议</a>
+                <a href="#">地图投稿</a>
+            </div>
+            <p class="copyright">
+                &copy; 2023 迪酷CS1.6资源站. All Rights Reserved. <br>
+                本站资源仅供学习交流使用，请勿用于商业用途。
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Mobile Menu Toggle
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('#nav-menu');
+
+        menuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('show');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('show');
+            });
+        });
+    </script>
+</body>
+</html>
