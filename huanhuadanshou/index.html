@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻化单手剑-游戏装备鉴赏与获取指南</title>
+    <meta name="description" content="本站为您提供各类游戏中幻化单手剑的鉴赏、属性分析、获取途径及搭配建议，涵盖MMORPG、奇幻RPG及动作角色扮演游戏中的帅气武器图鉴。">
+    <meta name="keywords" content="幻化单手剑,游戏装备,武器鉴赏,装备搭配,游戏攻略">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d4af37;
+            --secondary-color: #1a1a1a;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --accent-glow: rgba(212, 175, 55, 0.3);
+            --spacing-unit: 16px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(18, 18, 18, 0.95);
+            border-bottom: 1px solid #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 25px;
+        }
+
+        nav a {
+            font-size: 1rem;
+            color: var(--text-main);
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            padding: 80px 0;
+            text-align: center;
+            background: radial-gradient(circle at center, #2a2a2a 0%, var(--bg-color) 70%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></svg>');
+            opacity: 0.3;
+            animation: rotate 60s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            position: relative;
+            text-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), #b8860b);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px var(--accent-glow);
+        }
+
+        /* 统计栏 */
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* 主要内容区 */
+        .content-section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary-color);
+            padding-left: 20px;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        /* 武器网格 */
+        .weapon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .weapon-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weapon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-color: var(--primary-color);
+        }
+
+        .weapon-image {
+            width: 100%;
+            height: 200px;
+            background-color: #252525;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .weapon-image svg {
+            width: 80%;
+            height: 80%;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.1));
+        }
+
+        .weapon-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: var(--primary-color);
+            padding: 4px 8px;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--primary-color);
+        }
+
+        .weapon-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .weapon-title {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+
+        .weapon-source {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .weapon-stats {
+            margin-top: auto;
+            padding-top: 15px;
+            border-top: 1px solid #333;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* 获取途径分类 */
+        .acquisition-section {
+            background-color: #161616;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #333;
+        }
+
+        .tab-btn {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 1rem;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .guide-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .guide-item p {
+            margin-bottom: 15px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .guide-list li {
+            margin-bottom: 8px;
+            padding-left: 15px;
+            position: relative;
+            color: #ccc;
+        }
+
+        .guide-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        /* FAQ */
+        .faq-section {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--card-bg);
+            margin-bottom: 15px;
+            border-radius: 4px;
+            border: 1px solid #333;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-muted);
+            display: none;
+            border-top: 1px solid #333;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--primary-color);
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #0a0a0a;
+            padding: 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid #333;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            color: #555;
+            font-size: 0.85rem;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .stats-bar { flex-direction: column; gap: 20px; }
+            .tab-content.active { grid-template-columns: 1fr; }
+            .nav-wrapper { flex-direction: column; gap: 15px; }
+            nav ul { gap: 15px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container nav-wrapper">
+        <a href="#" class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6"/><path d="M6 15l6-6"/><path d="M12 3v18"/><path d="M21 3l-9 18"/></svg>
+            幻化单手剑 <span>指南</span>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#gallery" class="active">图鉴</a></li>
+                <li><a href="#acquisition">获取</a></li>
+                <li><a href="#guide">搭配</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>打造你的专属幻化单手剑</h1>
+            <p>探索游戏中那些不仅属性强大，更兼具美学设计的单手剑。从暗黑风格的利刃到神圣光辉的圣剑，为你的角色寻找最完美的武器。</p>
+            <a href="#gallery" class="cta-button">浏览图鉴</a>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>收录武器</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>游戏平台</p>
+                </div>
+                <div class="stat-item">
+                    <h3>100%</h3>
+                    <p>精选推荐</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>热门幻化单手剑</h2>
+                    <p>按游戏分类浏览，寻找你心仪的武器模型</p>
+                </div>
+            </div>
+
+            <div class="weapon-grid">
+                <!-- Card 1 -->
+                <article class="weapon-card">
+                    <div class="weapon-image">
+                        <span class="weapon-badge">魔兽世界</span>
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M50 10 L55 40 L85 40 L60 60 L70 90 L50 75 L30 90 L40 60 L15 40 L45 40 Z" fill="none" stroke="#d4af37" stroke-width="2"/>
+                            <line x1="50" y1="10" x2="50" y2="75" stroke="#d4af37" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="weapon-info">
+                        <h3 class="weapon-title">埃辛诺斯战刃</h3>
+                        <p class="weapon-source">恶魔猎手毕业幻化</p>
+                        <div class="weapon-stats">
+                            <span>攻击: 1000</span>
+                            <span>稀有度: 史诗</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="weapon-card">
+                    <div class="weapon-image">
+                        <span class="weapon-badge">最终幻想14</span>
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="45" y="5" width="10" height="90" fill="#888"/>
+                            <path d="M45 5 L55 5 L50 20 Z" fill="#d4af37"/>
+                            <circle cx="50" cy="95" r="8" fill="#d4af37"/>
+                        </svg>
+                    </div>
+                    <div class="weapon-info">
+                        <h3 class="weapon-title">光辉圣剑</h3>
+                        <p class="weapon-source">圣骑士/武僧</p>
+                        <div class="weapon-stats">
+                            <span>攻击: 950</span>
+                            <span>稀有度: 稀有</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="weapon-card">
+                    <div class="weapon-image">
+                        <span class="weapon-badge">原神</span>
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M20 80 L50 20 L80 80 Z" fill="none" stroke="#ffcc00" stroke-width="2"/>
+                            <line x1="50" y1="20" x2="50" y2="80" stroke="#ffcc00" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="weapon-info">
+                        <h3 class="weapon-title">西风剑</h3>
+                        <p class="weapon-source">单手剑/风元素</p>
+                        <div class="weapon-stats">
+                            <span>攻击: 510</span>
+                            <span>稀有度: 4星</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="weapon-card">
+                    <div class="weapon-image">
+                        <span class="weapon-badge">古墓丽影</span>
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 90 L50 10 L90 90 Z" fill="none" stroke="#e74c3c" stroke-width="2"/>
+                            <line x1="50" y1="10" x2="50" y2="90" stroke="#e74c3c" stroke-width="1" opacity="0.5"/>
+                        </svg>
+                    </div>
+                    <div class="weapon-info">
+                        <h3 class="weapon-title">鲁阿之剑</h3>
+                        <p class="weapon-source">近战武器</p>
+                        <div class="weapon-stats">
+                            <span>攻击: 450</span>
+                            <span>稀有度: 普通</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acquisition Section -->
+    <section id="acquisition" class="content-section acquisition-section">
+        <div class="container">
+            <div class="section-header">
+                <div>
+                    <h2>获取途径指南</h2>
+                    <p>如何获得这些稀有的幻化单手剑？</p>
+                </div>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'raid')">副本掉落</button>
+                <button class="tab-btn" onclick="openTab(event, 'quest')">任务奖励</button>
+                <button class="tab-btn" onclick="openTab(event, 'pvp')">PVP 获取</button>
+            </div>
+
+            <div id="raid" class="tab-content active">
+                <div class="guide-item">
+                    <h4>高难度副本掉落</h4>
+                    <p>许多经典的单手剑通常作为高难度团队副本（Raid）的BOSS掉落物。这些武器通常具有独特的模型设计和发光特效。</p>
+                    <ul class="guide-list">
+                        <li>关注世界首杀队伍的进度更新。</li>
+                        <li>查看拍卖行是否有其他玩家出售交易物品。</li>
+                        <li>留意赛季末的“大秘境”或“突袭”奖励。</li>
+                    </ul>
+                </div>
+                <div class="guide-item">
+                    <h4>活动限时获取</h4>
+                    <p>部分游戏会在特定节日或周年庆活动中推出限时掉落的单手剑。</p>
+                    <ul class="guide-list">
+                        <li>参与“战火祭坛”等PVE活动。</li>
+                        <li>兑换节日代币（如圣光之尘）。</li>
+                        <li>注意活动截止日期，过期即止。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div id="quest" class="tab-content">
+                <div class="guide-item">
+                    <h4>主线任务链</h4>
+                    <p>在游戏初期，跟随主线剧情通常能获得一把过渡用的单手剑，其造型往往符合剧情背景，且带有独特的涂装。</p>
+                </div>
+                <div class="guide-item">
+                    <h4>成就奖励</h4>
+                    <p>完成特定的成就（如“屠龙者”、“勇者”）有时会奖励永久性的武器模型，即使属性不再适用，外观依然保留。</p>
+                </div>
+            </div>
+
+            <div id="pvp" class="tab-content">
+                <div class="guide-item">
+                    <h4>竞技场与战场</h4>
+                    <p>PVP 武器通常具有“破败”、“残暴”或“荣耀”的属性前缀，外观上往往带有骷髅、锁链或符文等元素。</p>
+                </div>
+                <div class="guide-item">
+                    <h4>荣誉与征服点数</h4>
+                    <p>通过在PVP模式中获取点数，可以在赛季中逐步兑换完整的武器套组。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="content-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+            </div>
+            <div class="faq-section">
+                <div class="faq-item">
+                    <div class="faq-question">幻化单手剑是否会影响游戏数值？</div>
+                    <div class="faq-answer">
+                        通常情况下，幻化只改变武器的外观模型和颜色，不会改变其攻击力、附魔或附带的属性。但在极少数游戏中，幻化可能附带特殊的“幻化特效”或光环，这通常作为纯粹的视觉装饰存在。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何判断一把单手剑是否适合我的职业？</div>
+                    <div class="faq-answer">
+                        判断标准主要取决于游戏机制。有些游戏要求单手剑必须与盾牌搭配（如战士、圣骑士），有些则要求必须搭配副手物品（如匕首、法杖）。请查阅该游戏的职业指南，确认你的职业是否可以使用单手剑作为主手武器。
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">跨服交易单手剑需要注意什么？</div>
+                    <div class="faq-answer">
+                        如果是账号交易或跨服寄售，请确认该武器是否绑定。许多游戏中的稀有武器在获得时会自动绑定到角色身上，无法再次交易。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-links">
+            <a href="#">关于我们</a>
+            <a href="#">投稿指南</a>
+            <a href="#">联系方式</a>
+            <a href="#">免责声明</a>
+        </div>
+        <p class="copyright">© 2023 幻化单手剑指南网. All rights reserved. 本站内容仅供玩家参考与交流.</p>
+    </div>
+</footer>
+
+<script>
+    // Tab Switching Logic
+    function openTab(evt, tabName) {
+        var i, tabContent, tabBtn;
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
+        }
+        tabBtn = document.getElementsByClassName("tab-btn");
+        for (i = 0; i < tabBtn.length; i++) {
+            tabBtn[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        item.querySelector('.faq-question').addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+</script>
+
+</body>
+  </html>
