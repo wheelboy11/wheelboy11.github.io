@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenovo A60软件-官方固件升级与实用工具下载指南</title>
+    <meta name="description" content="Lenovo A60软件下载中心，提供官方ROM固件升级包、官方驱动程序、ADB工具及刷机教程。解决Lenovo A60系统卡顿、无法开机、USB连接问题，获取最新安卓版本体验。">
+    <meta name="keywords" content="Lenovo A60软件, Lenovo A60固件, Lenovo A60刷机, Lenovo A60驱动, Lenovo A60 ROM, Lenovo A60官方包">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #f5f5f5;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --success-color: #28a745;
+            --bg-color: #ffffff;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #f9f9f9;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .btn-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-header:hover {
+            background-color: #0052a3;
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #eef6ff;
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .section-title {
+            font-size: 22px;
+            margin-bottom: 25px;
+            padding-left: 15px;
+            border-left: 4px solid var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+
+        /* Tool Grid */
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .tool-card {
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        }
+
+        .tool-icon {
+            height: 120px;
+            background-color: #f0f4f8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: var(--primary-color);
+        }
+
+        .tool-info {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-info h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .tool-info p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            flex: 1;
+        }
+
+        .tool-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 15px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-download {
+            display: block;
+            text-align: center;
+            background-color: var(--text-dark);
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-download:hover {
+            background-color: #000;
+        }
+
+        /* Guide Section */
+        .guide-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        .guide-content {
+            background: var(--bg-color);
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-list {
+            counter-reset: step;
+        }
+
+        .step-item {
+            position: relative;
+            padding-left: 50px;
+            margin-bottom: 25px;
+        }
+
+        .step-item::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 36px;
+            font-weight: bold;
+        }
+
+        .step-item h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .step-item p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .sidebar-box {
+            background: var(--bg-color);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-box h4 {
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+        .warning-list li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .warning-list li::before {
+            content: "!";
+            position: absolute;
+            left: 0;
+            color: #d9534f;
+            font-weight: bold;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--bg-color);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border-color);
+            padding: 15px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-light);
+            padding-left: 20px;
+            border-left: 2px solid var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-col h5 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 14px;
+            }
+            .guide-layout {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                <span>Lenovo A60 软件中心</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">固件下载</a></li>
+                    <li><a href="#">驱动工具</a></li>
+                    <li><a href="#">刷机教程</a></li>
+                </ul>
+            </nav>
+            <a href="#download" class="btn-header">立即下载</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Lenovo A60 软件资源与升级指南</h1>
+            <p>专为联想 A60（乐Phone A60）用户打造，提供官方固件、ADB驱动、Odin刷机工具及详细操作教程。解决系统卡顿、无法开机及USB连接问题。</p>
+            <div class="hero-tags">
+                <span class="tag">官方ROM</span>
+                <span class="tag">驱动修复</span>
+                <span class="tag">安全刷机</span>
+                <span class="tag">详细教程</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        
+        <!-- Software Tools Section -->
+        <section id="download">
+            <h2 class="section-title">必备软件与工具下载</h2>
+            <div class="tool-grid">
+                <!-- Tool 1 -->
+                <article class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="tool-info">
+                        <h3>Lenovo A60 官方固件 (ROM)</h3>
+                        <p>包含官方原厂系统包，适合恢复出厂设置或解决严重系统故障。请根据当前手机型号（如 A60-0088）选择对应文件。</p>
+                        <div class="tool-meta">
+                            <span>Android 2.3.6</span>
+                            <span>MD5校验通过</span>
+                        </div>
+                        <a href="#" class="btn-download" onclick="alert('请根据您的机型具体版本选择下载。')">下载固件包</a>
+                    </div>
+                </article>
+
+                <!-- Tool 2 -->
+                <article class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                    </div>
+                    <div class="tool-info">
+                        <h3>Lenovo A60 USB 驱动</h3>
+                        <p>电脑端驱动程序，安装后电脑可识别手机进行文件传输、备份及刷机操作。解决“设备未识别”问题。</p>
+                        <div class="tool-meta">
+                            <span>Win XP/7/10</span>
+                            <span>免驱版可选</span>
+                        </div>
+                        <a href="#" class="btn-download" onclick="alert('请下载并安装驱动程序，安装时请选择‘允许我安装软件’。')">下载驱动程序</a>
+                    </div>
+                </article>
+
+                <!-- Tool 3 -->
+                <article class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+                    </div>
+                    <div class="tool-info">
+                        <h3>Odin 刷机工具 (Win版)</h3>
+                        <p>三星/部分联想机型通用的刷机软件。用于将下载的固件包写入手机，实现系统升级或降级。</p>
+                        <div class="tool-meta">
+                            <span>版本 v3.13.1</span>
+                            <span>稳定版</span>
+                        </div>
+                        <a href="#" class="btn-download" onclick="alert('Odin 刷机需要连接手机，请先安装驱动。')">下载 Odin</a>
+                    </div>
+                </article>
+
+                <!-- Tool 4 -->
+                <article class="tool-card">
+                    <div class="tool-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    </div>
+                    <div class="tool-info">
+                        <h3>Recovery 模式工具</h3>
+                        <p>用于进入 Recovery 模式清除数据、挂载分区或手动刷入官方包。解决卡在开机Logo或无法开机的情况。</p>
+                        <div class="tool-meta">
+                            <span>适用机型</span>
+                            <span>官方工具</span>
+                        </div>
+                        <a href="#" class="btn-download" onclick="alert('请先进入Recovery模式，然后选择Apply update from SD card。')">下载 Recovery</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Guide Section -->
+        <section>
+            <h2 class="section-title">Lenovo A60 软件升级指南</h2>
+            <div class="guide-layout">
+                <div class="guide-content">
+                    <h3>步骤一：准备工作</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <h4>备份数据</h4>
+                            <p>刷机前请务必使用手机自带的“备份与恢复”功能或电脑端软件（如豌豆荚）备份联系人、短信和照片，刷机将清除所有数据。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>安装驱动</h4>
+                            <p>在电脑上安装 Lenovo A60 USB 驱动程序，确保手机与电脑连接正常。开启手机的“USB调试”模式（设置 -> 应用程序 -> 开发）。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>下载固件</h4>
+                            <p>根据您的手机 IMEI 码（拨号盘输入 *#06# 查看）下载对应版本的官方固件包，并解压到电脑非系统盘的根目录。</p>
+                        </div>
+                    </div>
+                    
+                    <h3 style="margin-top: 30px;">步骤二：进入刷机模式</h3>
+                    <div class="step-list">
+                        <div class="step-item">
+                            <h4>关闭手机</h4>
+                            <p>长按电源键关闭手机。</p>
+                        </div>
+                        <div class="step-item">
+                            <h4>组合按键</h4>
+                            <p>同时按住“音量下键”和“电源键”，直到屏幕出现黄色的 Logo 或“Samsung”字样，松开按键。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <aside>
+                    <div class="sidebar-box">
+                        <h4>⚠️ 重要注意事项</h4>
+                        <ul class="warning-list">
+                            <li>请勿在刷机过程中拔掉数据线。</li>
+                            <li>使用非官方修改版固件可能导致手机变砖。</li>
+                            <li>确保手机电量充足，建议不低于 50%。</li>
+                            <li>刷机有风险，操作需谨慎。</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-box" style="margin-top: 20px;">
+                        <h4>常见问题解决</h4>
+                        <ul class="warning-list">
+                            <li><strong>无法识别驱动：</strong>尝试更换 USB 接口或安装 Google USB 驱动。</li>
+                            <li><strong>刷机失败：</strong>检查下载的固件包 MD5 值是否一致。</li>
+                            <li><strong>手机重启卡在开机画面：</strong>长按电源键强制重启，进入 Recovery 模式清除缓存。</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 class="section-title">常见问题 (FAQ)</h2>
+            <div class="faq-item">
+                <div class="faq-question">Lenovo A60 软件升级后变慢怎么办？</div>
+                <div class="faq-answer">升级到较新的官方固件可能会占用更多内存。建议定期清理缓存，卸载不常用的预装软件，或使用“超级用户”权限管理后台进程。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如何判断我的手机是否支持该固件？</div>
+                <div class="faq-answer">请查看手机的机身标签或拨号界面输入 *#06# 获取 IMEI 码。下载页面通常会有机型列表，请确保 IMEI 号码与固件描述中的型号一致。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">刷机失败导致无法开机怎么办？</div>
+                <div class="faq-answer">如果手机无法开机，请尝试进入 Recovery 模式（按住音量下+电源键）。在 Recovery 模式中选择“Wipe data/factory reset”进行恢复出厂设置，这通常能解决软件冲突导致的死机问题。</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h5>关于工具</h5>
+                    <ul>
+                        <li><a href="#">软件下载声明</a></li>
+                        <li><a href="#">固件版本说明</a></li>
+                        <li><a href="#">驱动安装指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>支持服务</h5>
+                    <ul>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">提交反馈</a></li>
+                        <li><a href="#">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h5>免责声明</h5>
+                    <p style="font-size: 12px; line-height: 1.5;">
+                        本站提供的 Lenovo A60 软件仅供技术交流与学习使用。刷机操作存在风险，如因操作不当导致手机损坏，本站不承担任何责任。请确保您了解相关风险并自行承担后果。
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Lenovo A60 软件资源站. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
