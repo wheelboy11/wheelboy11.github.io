@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="梦幻神器任务攻略大全，提供梦幻西游手游/端游中神器任务的详细流程、掉落奖励、队伍配置及避坑指南。">
+    <meta name="keywords" content="梦幻神器任务, 梦幻西游神器任务, 神器任务攻略, 梦幻西游手游任务">
+    <title>梦幻神器任务-全服攻略与奖励查询系统</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #6c5ce7;
+            --secondary-color: #a29bfe;
+            --accent-color: #fdcb6e;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3436;
+            --text-light: #636e72;
+            --border-radius: 12px;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--card-bg);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-login {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn-login:hover {
+            background-color: #5649c0;
+            transform: translateY(-2px);
+        }
+
+        /* Main Container */
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .hero-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+
+        .hero-card h2 {
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        .hero-card p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .steps-list {
+            counter-reset: step;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .steps-list li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        /* Dashboard Grid */
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(108, 92, 231, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .card p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            margin-top: auto;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: bold;
+        }
+
+        .status-active { background: #e3fcef; color: #00b894; }
+        .status-closed { background: #ffeaa7; color: #fdcb6e; }
+
+        /* Info Table */
+        .info-table-container {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            margin-bottom: 3rem;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            color: var(--text-light);
+            font-weight: 600;
+            background-color: #fafafa;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1.5rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-main);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        .faq-item:not(.active) .faq-question::after {
+            content: '+';
+        }
+
+        /* Footer */
+        footer {
+            background: #2d3436;
+            color: #b2bec3;
+            padding: 3rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.8rem; }
+            .hero { grid-template-columns: 1fr; }
+            .nav-container { flex-direction: column; gap: 1rem; }
+            .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>梦幻神器任务</h1>
+    <p>全服神器任务流程、掉落奖励与避坑指南</p>
+</header>
+
+<nav>
+    <div class="nav-container">
+        <div class="logo">
+            <span>✦</span> 神器攻略网
+        </div>
+        <div class="nav-links">
+            <a href="#guide">新手指南</a>
+            <a href="#rewards">奖励查询</a>
+            <a href="#tips">组队技巧</a>
+            <a href="#faq">常见问题</a>
+        </div>
+        <a href="#" class="btn-login">用户登录</a>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero Section: Guide Overview -->
+    <section class="hero">
+        <article class="hero-card">
+            <h2>什么是神器任务？</h2>
+            <p>“梦幻神器任务”是游戏中提升角色属性的重要途径。完成特定主线剧情后解锁，每周可参与，为角色提供永久属性加成。</p>
+            <ul class="steps-list">
+                <li><strong>前置条件：</strong>角色等级达到50级，完成特定前置剧情。</li>
+                <li><strong>参与方式：</strong>每周一至周日全天开放，需前往长安城NPC处接取。</li>
+                <li><strong>核心目标：</strong>净化神器碎片，激活神器光辉，提升防御与气血上限。</li>
+            </ul>
+        </article>
+        <article class="hero-card" style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white;">
+            <h2>本周状态</h2>
+            <p>当前服务器开放中，难度适中，适合全职业组队。</p>
+            <div style="margin-top: 1rem;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                    <span>当前进度</span>
+                    <span>12/12</span>
+                </div>
+                <div style="width: 100%; background: rgba(255,255,255,0.2); height: 8px; border-radius: 4px;">
+                    <div style="width: 100%; background: var(--accent-color); height: 8px; border-radius: 4px;"></div>
+                </div>
+                <p style="font-size: 0.85rem; margin-top: 0.5rem; opacity: 0.8;">预计耗时：约 45 分钟 / 组</p>
+            </div>
+        </article>
+    </section>
+
+    <!-- Dashboard Grid -->
+    <section id="guide">
+        <div class="section-title">
+            <span>任务流程指引</span>
+            <span style="font-size: 0.9rem; color: var(--text-light); font-weight: normal;">点击卡片查看详情</span>
+        </div>
+        <div class="dashboard-grid">
+            <div class="card">
+                <div class="card-icon">🛡️</div>
+                <h3>任务一：封印妖魔</h3>
+                <p>前往指定场景，击败守护神兽，收集散落的神器碎片。注意躲避AOE技能，保持队伍血量健康。</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">进行中</span>
+                    <span style="float: right;">推荐等级: 50+</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">⚔️</div>
+                <h3>任务二：战场突围</h3>
+                <p>进入试炼地图，击败入侵的魔族先锋。建议配备封系门派，控制敌方关键单位。</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">进行中</span>
+                    <span style="float: right;">推荐等级: 55+</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">💎</div>
+                <h3>任务三：神格觉醒</h3>
+                <p>在主祭坛完成最终仪式，消耗收集到的碎片进行觉醒。觉醒成功将永久提升属性。</p>
+                <div class="card-footer">
+                    <span class="status-badge status-closed">需前置完成</span>
+                    <span style="float: right;">难度: 困难</span>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-icon">🎁</div>
+                <h3>每周福利</h3>
+                <p>完成全部任务可获得大量经验、银币以及稀有道具“神器精魄”。精魄可用于兑换强力装备。</p>
+                <div class="card-footer">
+                    <span class="status-badge status-active">每日刷新</span>
+                    <span style="float: right;">奖励丰厚</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Table -->
+    <section id="rewards">
+        <div class="section-title">
+            <span>奖励掉落统计</span>
+        </div>
+        <div class="info-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>任务阶段</th>
+                        <th>主要掉落</th>
+                        <th>次要掉落</th>
+                        <th>特殊物品</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>第一阶段：封印</td>
+                        <td>神兽碎片 x 5</td>
+                        <td>高级魔兽要诀 x 1</td>
+                        <td>祈福香 x 3</td>
+                    </tr>
+                    <tr>
+                        <td>第二阶段：突围</td>
+                        <td>神器核心 x 1</td>
+                        <td>金刚石 x 1</td>
+                        <td>经验书 x 1</td>
+                    </tr>
+                    <tr>
+                        <td>第三阶段：觉醒</td>
+                        <td>神器光辉石 x 1</td>
+                        <td>超级金柳露 x 2</td>
+                        <td>称号碎片 x 10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq">
+        <div class="section-title">
+            <span>常见问题解答</span>
+        </div>
+        <div class="faq-section">
+            <div class="faq-item active">
+                <div class="faq-question">神器任务每天都可以做吗？</div>
+                <div class="faq-answer">是的，“梦幻神器任务”每天都可以完成一次。但每周重置进度，建议在周末全服活动期间组队效率更高。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如果没有队友怎么办？</div>
+                <div class="faq-answer">游戏内设有“找队友”功能，系统会自动匹配其他单人玩家。也可以在帮派频道或世界频道喊话组队。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">神器属性是永久的吗？</div>
+                <div class="faq-answer">是的，完成觉醒后获得的属性加成是永久的，不会随服务器维护或角色死亡而消失。</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">如果中途任务失败会扣除什么？</div>
+                <div class="faq-answer">正常情况下失败不扣任务次数，但会消耗少量体力值。建议在队伍配置合理时再尝试挑战高难度阶段。</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-col">
+            <h4>关于我们</h4>
+            <p style="font-size: 0.9rem; line-height: 1.6;">专注提供最全的梦幻神器任务攻略与游戏资讯，助您轻松通关。</p>
+        </div>
+        <div class="footer-col">
+            <h4>快速链接</h4>
+            <ul>
+                <li><a href="#">新手入门</a></li>
+                <li><a href="#">职业推荐</a></li>
+                <li><a href="#">活动日历</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>帮助中心</h4>
+            <ul>
+                <li><a href="#">联系客服</a></li>
+                <li><a href="#">意见反馈</a></li>
+                <li><a href="#">免责声明</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="copyright">
+        &copy; 2023 梦幻神器攻略网 版权所有 | 仅供学习交流使用
+    </div>
+</footer>
+
+<script>
+    // Simple FAQ Toggle Logic
+    document.addEventListener('DOMContentLoaded', function() {
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                // Close others
+                faqItems.forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                    }
+                });
+                // Toggle current
+                item.classList.toggle('active');
+            });
+        });
+    });
+</script>
+
+</body>
+</html>
